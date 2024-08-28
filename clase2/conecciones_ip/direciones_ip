@@ -1,0 +1,7 @@
+#!/bin/bash
+
+
+curl -o nginx-access.log http://34.201.143.212/nginx-access.log
+
+
+awk '{print $1}' nginx-access.log | sort | uniq -c | sort -nr > resultado_conexiones_ip.txt
